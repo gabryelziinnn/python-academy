@@ -7,7 +7,7 @@ inteiro, informe que não é um número inteiro.
 entrada = input('Digite um número inteiro: ')
 
 if entrada.isdigit() == False:
-    print('Você não digitou um número!')
+    print('Você não digitou um número (ou ao menos nao digitou no formato inteiro)!',entrada)
 
 while entrada.isdigit() == True:
     x = int(entrada)

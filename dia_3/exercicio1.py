@@ -18,4 +18,3 @@ while entrada.isdigit() == True:
     else:
         print(f'Boa noite! são {entrada}:{HORARIO}')
         break
-
