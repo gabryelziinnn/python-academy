@@ -9,6 +9,7 @@ import re
 
 vogais = input('Insira somente vogais no texto: ')
 
+
 while True:
    if not re.findall('[aeiou]', vogais):    
        print(f'Você deve inserir somente vogais e suas palavraas: {vogais}')
