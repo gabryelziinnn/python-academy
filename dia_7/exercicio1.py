@@ -19,46 +19,30 @@ Gere produtos_ordenados_por_nome por deep copy (cópia profunda)
 Ordene os produtos por preco crescente (do menor para maior)
 Gere produtos_ordenados_por_preco por deep copy (cópia profunda)
 '''
-import dados_packages, copy
+import dados_packages
 
 
 # 1° Questão:
 
-novos_produtos = copy.deepcopy(dados_packages.produtos)
-novos_valores = [
-    { **itens, 'preco' : round(itens['preco'] * 1.1, 2) }
-    # com este for, pego todos os valores da lista
-    for itens in novos_produtos
-]
-produtos = [nomes['nome'] for nomes in novos_valores]
-valores = [valor['preco'] for valor in novos_valores]
-
 # valores formatados
-for x in valores:
+for x in dados_packages.valores:
     novos = format(x, '.2f')
    # print(novos)
 
-prod = ["{0}".format(i) for i in produtos]
-val = ["{0:0.2f}".format(i) for i in valores]
+prod = ["{0}".format(i) for i in dados_packages.produtos]
+val = ["{0:0.2f}".format(i) for i in dados_packages.valores]
 
 print(f'{prod + val}')
 
 
 # 2° Questão:
-lista_ordenada = copy.deepcopy(novos_valores)
-lista_ordenada.sort(key=lambda itens:itens['nome'])
-
-produtos_ordenados_por_nome = sorted(lista_ordenada, key=lambda itens:itens['nome'])
-
-for valores in produtos_ordenados_por_nome:
+for valores in dados_packages.produtos_ordenados_por_nome:
     print(f'\b{valores}')
 
 
 # 3° Questão:
-ordenar = copy.deepcopy(produtos_ordenados_por_nome)
-ordenar.sort(key=lambda itens:itens['preco'])
-
-produtos_ordenados_por_preco = sorted(ordenar, key=lambda itens:itens['preco'])
+dados_packages.ordenar.sort(key=lambda itens:itens['preco'])
+produtos_ordenados_por_preco = sorted(dados_packages.ordenar, key=lambda itens:itens['preco'])
 
 print()
 print()
