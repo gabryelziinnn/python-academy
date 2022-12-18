@@ -1,13 +1,19 @@
-carrinho = []
+"""
+Faça um programa que peça ao usuário para digitar um número inteiro,
+informe se este número é par ou ímpar. Caso o usuário não digite um número
+inteiro, informe que não é um número inteiro.
+"""
 
-carrinho.append(('Prod1', 30.30))
-carrinho.append(('Prod2', 10.40))
-carrinho.append(('Prod3', 40))
-carrinho.append(('Prod4', 50))
-carrinho.append(('Prod5', 60))
+entrada = input('Digite um número inteiro: ')
 
+if entrada.isdigit() == False:
+    print('Você não digitou um número (ou ao menos nao digitou no formato inteiro)!',entrada)
 
-"""pego o index dos valores, e somo os mesmos"""
-multi = sum([valor[1] for valor in carrinho])
-
-print(multi)
+while entrada.isdigit() == True:
+    x = int(entrada)
+    if x % 2 == 0:
+        print('Seu número é par')
+        break
+    else:
+        print('Seu numero é impar')
+        break     
